@@ -1,0 +1,9 @@
+.idea/
+*.iml
+data-common/target/
+data-flow/target/
+data-proof/target/
+data-source/target/
+data-flow/dependency-reduced-pom.xml
+data-source/dependency-reduced-pom.xml
+data-proof/dependency-reduced-pom.xml

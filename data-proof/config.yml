@@ -1,0 +1,38 @@
+logging:
+  level: INFO
+  loggers:
+    com.fahdisa: DEBUG
+redis:
+  type: basic
+  name: data-proof
+  node:
+    type: redis
+    node: ${REDIS_URL}
+    clientName: data-proof
+  redisCodec:
+    type: string
+  clientResources:
+    type: default
+    commandLatencyCollector:
+      type: default
+      enabled: false
+consumer:
+  type: basic
+  bootstrapServers:
+    - ${KAFKA_URL}
+  consumerGroupId: data-proof
+  name: consumerNameToBeUsedInMetrics
+  keyDeserializer:
+    type: string
+  valueDeserializer:
+    type: string
+topics:
+  consumer: ${CONSUMER_TOPIC}
+swagger:
+  title: Tokenizer data-proof
+  resourcePackage: com.fahdisa.data.proof.resources
+  version: 1.0.0
+  description: Data Proof
+  termsOfServiceUrl:
+  contact: Isau Opeyemi AZEEZ
+  contactEmail: prodigy4442@gmail.com

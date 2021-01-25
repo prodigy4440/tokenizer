@@ -1,0 +1,53 @@
+logging:
+  level: INFO
+  loggers:
+    com.fahdisa: DEBUG
+redis:
+  type: basic
+  name: data-flow
+  node:
+    type: redis
+    node: ${REDIS_URL}
+    clientName: data-flow
+  redisCodec:
+    type: string
+  clientResources:
+    type: default
+    commandLatencyCollector:
+      type: default
+      enabled: false
+producer:
+  type: basic
+  bootstrapServers:
+    - ${KAFKA_URL}
+  name: producerNameToBeUsedInMetrics
+  keySerializer:
+    type: string
+  valueSerializer:
+    type: string
+  acks: all
+  retries: 2147483647 # int max value
+  maxInFlightRequestsPerConnection: 1
+  maxPollBlockTime: 10s
+consumer:
+  type: basic
+  bootstrapServers:
+    - ${KAFKA_URL}
+  consumerGroupId: data-flow
+  name: consumerNameToBeUsedInMetrics
+  keyDeserializer:
+    type: string
+  valueDeserializer:
+    type: string
+topics:
+  producer: ${PRODUCER_TOPIC}
+  consumer: ${CONSUMER_TOPIC}
+swagger:
+  title: Tokenizer data-flow
+  resourcePackage: com.fahdisa.data.flow.resources
+  version: 1.0.0
+  description: Data Flow
+  termsOfServiceUrl:
+  contact: Isau Opeyemi AZEEZ
+  contactEmail: prodigy4442@gmail.com
+

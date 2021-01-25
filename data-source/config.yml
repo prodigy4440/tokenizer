@@ -1,0 +1,27 @@
+logging:
+  level: INFO
+  loggers:
+    com.fahdisa: DEBUG
+producer:
+  type: basic
+  bootstrapServers:
+    - ${KAFKA_URL}
+  name: producerNameToBeUsedInMetrics
+  keySerializer:
+    type: string
+  valueSerializer:
+    type: string
+  acks: all
+  retries: 2147483647 # int max value
+  maxInFlightRequestsPerConnection: 1
+  maxPollBlockTime: 10s
+topics:
+  producer: ${PRODUCER_TOPIC}
+swagger:
+  title: Tokenizer data-source
+  resourcePackage: com.fahdisa.data.source.resources
+  version: 1.0.0
+  description: Data Source
+  termsOfServiceUrl:
+  contact: Isau Opeyemi AZEEZ
+  contactEmail: prodigy4442@gmail.com
