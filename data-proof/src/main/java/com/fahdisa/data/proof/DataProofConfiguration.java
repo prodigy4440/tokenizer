@@ -1,16 +1,14 @@
 package com.fahdisa.data.proof;
 
 import com.fahdisa.data.common.config.KafkaTopic;
-import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.dropwizard.Configuration;
 import io.dropwizard.kafka.KafkaConsumerFactory;
-import io.dropwizard.kafka.KafkaProducerFactory;
 import io.dropwizard.redis.RedisClientFactory;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
-import org.hibernate.validator.constraints.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
 
 public class DataProofConfiguration extends Configuration {
 

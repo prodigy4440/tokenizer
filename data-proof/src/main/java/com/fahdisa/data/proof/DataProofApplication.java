@@ -17,7 +17,6 @@ import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import io.lettuce.core.api.StatefulRedisConnection;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRebalanceListener;
-import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.common.TopicPartition;
 
 import java.util.Collection;

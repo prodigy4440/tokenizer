@@ -1,3 +1,11 @@
+server:
+  adminMinThreads: 1
+  adminMaxThreads: 64
+  adminContextPath: /
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: ${PORT}
 logging:
   level: INFO
   loggers:
